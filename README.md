@@ -1,2 +1,4 @@
-# GPUAcceleratedCryptography
-CS4995 GPU Computing Project
+# GPU-Accelerated Cryptography
+Crytographic part in the final project of GPU Computing
+
+Author: Yuqing Guan (yg2392)
