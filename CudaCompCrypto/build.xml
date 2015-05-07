@@ -1,0 +1,36 @@
+<project name='CudaCompCrypto' basedir="." default="run">
+    <property name="author" value="Yuqing Guan" />
+
+    <property name="build.dir" value="${basedir}/build" />
+    <property name="build.classdir" value="${build.dir}/classes" />
+    <property name="build.distdir" value="${buildd.ir}/dist" />
+
+    <property name="src.dir" value="${basedir}/src" />
+
+    <!-- EXECUTION TAGS -->
+    <property name="debug" value="off" />
+    <property name="verbose" value="off" />
+
+    <target name="init" description="Initialize ressources">                             
+       <mkdir dir="${build.classdir}"/>                                                   
+    </target>
+
+    <!-- ========================================================================= -->   
+    <!--                               Build Scheduler                             -->   
+    <!-- ========================================================================= -->   
+    <target name="build.CudaCompCrypto" depends="init">
+        <javac srcdir="${src.dir}" destdir="${build.classdir}" debug="${debug}"
+            optimize="on" verbose="${verbose}" includeantruntime="false">
+        </javac>
+    </target>
+
+    <target name="run" depends="build.CudaCompCrypto">
+        <java classname="edu.columbia.gpu11.Main" fork="true">
+            <sysproperty key="java.library.path" path="natives" />
+            <classpath>
+                <pathelement path="${build.classdir}"/>
+            </classpath>
+        </java>
+    </target>
+
+</project>
