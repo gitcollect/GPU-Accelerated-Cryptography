@@ -1,7 +1,5 @@
 # GPU-Accelerated Cryptography
 
-Author: Yuqing Guan (yg2392)
-
 Crytographic part in the final project of GPU Computing
 
 Including CPU- and GPU-based implementations of DES, AES and RSA
